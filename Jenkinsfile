@@ -5,27 +5,31 @@ pipeline {
         }
     }
     stages {
-        when {
-            branch 'master'
-        }
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
+        stage('AUTOMATED PIPELINE') {
+            when {
+                branch 'master'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+        stages {
+            stage('Build') {
+                steps {
+                    sh 'mvn -B -DskipTests clean package'
                 }
             }
-        }
-        stage('Deliver') {
-            steps {
-                sh './scripts/deliver.sh'
+            stage('Test') {
+                steps {
+                    sh 'mvn test'
+                }
+                post {
+                    always {
+                        junit 'target/surefire-reports/*.xml'
+                    }
+                }
+            }
+            stage('Deliver') {
+                steps {
+                    sh './scripts/deliver.sh'
+                }
             }
         }
     }
