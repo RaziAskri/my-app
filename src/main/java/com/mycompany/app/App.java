@@ -63,6 +63,7 @@ public class App {
             System.out.println("   Aurelien Tchouameni -midfielder");
 
             break;
+			
         case "S":
             // code block
             System.out.println("***This is the complete list of strikers*** \n");
