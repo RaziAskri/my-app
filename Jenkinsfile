@@ -1,3 +1,3 @@
 library 'Jenkins-shared-libraries'
 
-buildAndDeliverJavaApp run_tests: false,
+buildAndDeliverJavaApp run_tests: false
