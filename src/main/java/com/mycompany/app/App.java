@@ -9,7 +9,7 @@ public class App {
 
     public static void main(String[] args) {
 
-	    Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+	    Scanner scanner = new Scanner(System.in);
 
 		
 		
